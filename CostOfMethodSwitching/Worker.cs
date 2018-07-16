@@ -31,20 +31,20 @@ namespace CostOfMethodSwitching
 
         public void GenerateStrings()
         {
+            List<string> something = new List<string>();
+
             //for (int i = 0; i < Program.ITERATION; i++)
             //{
             //    string a = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
             //    string b = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
 
-            //    Console.WriteLine($"a: {a}");
-            //    Console.WriteLine($"b: {b}");
-
-            //    string result = a + b;
-            //    Console.WriteLine(result);
+            //    something.Add(a + b);
             //}
 
-            Testing.Concat();
-
+            for (int i = 0; i < Program.ITERATION; i++)
+            {
+               something.Add(Testing.Concat());
+            }
         }
     }
 }

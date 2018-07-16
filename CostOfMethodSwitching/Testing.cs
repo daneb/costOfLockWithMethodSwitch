@@ -13,23 +13,19 @@ namespace CostOfMethodSwitching
     {
         private static Object thisLock = new Object();
 
-        public static void Concat()
+        public static string Concat()
         {
             lock (thisLock)
             {
 
-                for (int i = 0; i < Program.ITERATION; i++)
-                {
+                string a = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
+                string b = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
 
-                    string a = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
-                    string b = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
+                //Console.WriteLine($"a: {a}");
+                //Console.WriteLine($"b: {b}");
 
-                    Console.WriteLine($"a: {a}");
-                    Console.WriteLine($"b: {b}");
-
-                    string result = a + b;
-                    Console.WriteLine(result);
-                }
+                 return a + b;
+                //Console.WriteLine(result);
             }
         }
     }
