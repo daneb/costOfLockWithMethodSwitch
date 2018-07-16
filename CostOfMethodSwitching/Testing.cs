@@ -17,15 +17,19 @@ namespace CostOfMethodSwitching
         {
             lock (thisLock)
             {
-                
-                string a = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
-                string b = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
 
-                Console.WriteLine($"a: {a}");
-                Console.WriteLine($"b: {b}");
+                for (int i = 0; i < Program.ITERATION; i++)
+                {
 
-                string result = a + b;
-                Console.WriteLine(result);
+                    string a = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
+                    string b = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
+
+                    Console.WriteLine($"a: {a}");
+                    Console.WriteLine($"b: {b}");
+
+                    string result = a + b;
+                    Console.WriteLine(result);
+                }
             }
         }
     }
